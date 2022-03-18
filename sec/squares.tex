@@ -1,0 +1,211 @@
+%!TEX root = ../bgsu21.tex
+
+\begin{frame}[fragile]{Cup product}
+	\pause Alexander and Whitney defined the cup product by dualizing a chain approximation to the diagonal:
+	\[
+	\gchains(\gsimplex^n) \to \gchains(\gsimplex^n) \otimes \gchains(\gsimplex^n).
+	\]
+	\pause Similarly, Cartan and Serre constructed: $\gchains(\gcube^n) \to \gchains(\gcube^n) \otimes \gchains(\gcube^n)$.
+
+	\bigskip\pause
+	As mentioned before, as graded rings,
+	\[
+	H^\bullet(\mathbb{C} P^2) \not\cong H^\bullet(S^2 \vee S^4).
+	\]
+
+	\vskip -8pt \pause But,
+	\[
+	H^\bullet(\Sigma(\mathbb{C} P^2)) \cong H^\bullet(\Sigma(S^2 \vee S^4)),
+	\]
+	where $\Sigma$ denotes suspension, for example $\Sigma(S^1)$ is
+	\begin{center}
+		\includegraphics[scale=.2]{aux/suspension.pdf}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Steenrod squares}
+	\pause These chain approximations, unlike the diagonal of spaces, are \textcolor{pblue}{not} invariant under transposition: $x \otimes y \stackrel{T}{\mapsto} y \otimes x$.
+	\begin{center}
+		\begin{tikzpicture}
+		\draw[color=pblue, thick] (0,0)--(1,1);
+		\draw[->] (1.25, .5) -- (1.75, .5);
+		\end{tikzpicture}
+		\begin{tikzpicture}
+		\node at (-0.1, 1){};
+		\draw[color=pblue, thick] (0,0)--(1,0)--(1,1);
+		\draw (1,1)--(0,1)--(0,0);
+		\end{tikzpicture}
+	\end{center}
+
+	\smallskip\pause To correct homotopically the breaking of this symmetry, Steenrod introduced explicit maps
+	\[
+	\Delta_i \colon \gchains(\gsimplex^n) \to \gchains(\gsimplex^n)^{\otimes 2},
+	\qquad
+	\partial \Delta_{i} = \big(1 \pm T \big) \Delta_{i-1}
+	\]
+
+	\pause
+
+	These induce further structure:
+	\[
+	\begin{split}
+		Sq^k \colon H^\bullet(X; \Ftwo) &\to H^\bullet(X; \Ftwo) \\
+		[\alpha] &\mapsto \big[ (\alpha \otimes \alpha) \Delta_i(-) \big]
+	\end{split}
+	\]
+
+	\vskip-5pt\pause
+
+	\textcolor{pblue}{Distinguishes}
+	\[
+	H^\bullet(\Sigma(\mathbb{C} P^2)) \not\cong H^\bullet(\Sigma(S^2 \vee S^4))
+	\]
+\end{frame}
+
+\begin{frame}[fragile]{A (new) description of Steenrod's construction}
+	\pause \vskip -5pt \textcolor{pblue}{Notation:} \vspace*{-5pt}
+	\[
+	d_u[v_0, \dots, v_m] = [v_0, \dots, \widehat v_u, \dots, v_m]
+	\]
+	\pause \vspace*{-15pt}
+	\[
+	\rP_q(n) = \big\{ U \subseteq \{0,\dots,n\} : \bars{U} = q \big\}
+	\]
+	\pause \vspace*{-15pt}
+	\[
+	\forall \, U = \{u_1 < \dots < u_q\} \in \rP_q(n)
+	\]
+	\pause \vspace*{-15pt}
+	\[
+	d_U = d_{u_1} \dotsm \, d_{u_q}
+	\]
+	\pause \vspace*{-15pt}
+	\[
+	U^\varepsilon = \big\{ u_i \in U \mid u_i + i \equiv \varepsilon \text{ mod } 2 \big\}
+	\]
+	\pause \vskip -10pt
+	\begin{definition}[Med.]
+		For a basis element $x \in \gchains_m(\gsimplex^n)$
+		\vspace*{-5pt}
+		\[
+		\Delta_i(x) \ = \!\!\! \sum_{U \in \rP_{m-i}(n)} \!\! d_{U^0}(x) \otimes d_{U^1}(x)
+		\]
+		\vspace*{-10pt}
+	\end{definition}
+	\pause \textcolor{pblue}{Example:} \vspace*{-5pt}
+	\begin{align*}
+	\Delta_0 [0,1,2] &=
+	\Big( d_{12} \otimes \id + d_2 \otimes d_0 + \id \otimes d_{01} \Big) [0,1,2]^{\otimes 2} \\ &=
+	[0] \otimes [0,1,2] + [0,1] \otimes [1,2] + [0,1,2] \otimes [2].
+	\end{align*}
+\end{frame}
+
+\begin{frame}{Fast computation of Steenrod squares}
+	\pause
+	Comparing with SAGE: (algorithm based on EZ-AW contraction)
+
+	\smallskip\pause
+	\textcolor{pblue}{$Sq^1$} on \textcolor{pblue}{$\Sigma^i\R P^2$} ($i^\th$ suspension of the real projective plane)
+
+	\medskip
+	\includegraphics[width=\textwidth]{aux/comp_sus_rp2.pdf}
+\end{frame}
+
+\begin{frame}[fragile]{Steenrod barcodes} \pause
+	Given a filtered simplicial complex $X$
+	\[
+	X_0 \to X_1 \to \cdots \to X_n.
+	\]
+	\pause
+	$Sq^k$ induces an endomorphism
+	\[
+	\begin{tikzcd}[column sep = small]
+	H^\bullet(X_n; \Ftwo) \arrow[r] & \cdots \arrow[r] & H^\bullet(X_{n-1}; \Ftwo) \arrow[r] & H^\bullet(X_0; \Ftwo) \\
+	H^\bullet(X_n; \Ftwo) \arrow[u, "Sq^k"] \arrow[r] & \cdots \arrow[r] & H^\bullet(X_{n-1}; \Ftwo) \arrow[u, "Sq^k"] \arrow[r] & H^\bullet(X_0; \Ftwo) \arrow[u, "Sq^k"].
+	\end{tikzcd}
+	\]
+	The \textcolor{pblue}{$Sq^k$ barcode} of $X$ is the barcode of $\mathrm{img}\ Sq^k$.
+
+	\bigskip\pause
+
+	With \textit{Umberto Lupo} and \textit{Guillaume Tauzin} from \textcolor{pblue}{\texttt{giotto-tda}}'s team
+
+	\medskip
+	develop a high-performance implementation: \textcolor{pblue}{\texttt{steenroder}}.
+\end{frame}
+
+\begin{frame}{Space of conformations of $\mathrm{C_8H_{16}}$}
+
+	Points in $\R^{24}$ (positions of $8$ carbons in $\R^3$)
+
+	\pause\smallskip
+
+	Computing $Sq^1$ barcode of a ``smooth component'' of this point cloud
+
+	\smallskip
+
+	\includegraphics[width=\textwidth]{aux/cyclo-octane_subsampled_absolute_barcodes.pdf}
+
+	Consistent with a \textcolor{pblue}{Klein bottle} component.
+\end{frame}
+
+\begin{frame}{More on cup-$i$ constructions}
+
+	\pause
+
+	\begin{theorem}[Med.]
+		All cup-$i$ constructions in the literature are equal up isomorphism:
+		\[
+		\triangle \sim \triangle^\prime \iff \forall i \in \N, \ \triangle_i = \triangle_i^\prime \ \vee \, \triangle_i = T \triangle_i^\prime.
+		\]
+	\end{theorem}
+
+	\pause
+
+	\begin{theorem}[Med.]
+		Steenrod's cup-$i$ construction defines the nerve of higher categories.
+	\end{theorem}
+
+	\pause\smallskip
+
+	\begin{theorem}[Laplante-Afossi--Med.--Vallette]
+		Let $P \subset \R^n$ be an $n$-dim convex polytope.
+		A generic basis of $\R^n$ defines a cellular cup-$i$ structure on $P$.
+	\end{theorem}
+\end{frame}
+
+\begin{frame}{Relations and secondary operations}
+
+	\pause
+
+	Cup-$i$ products are coboundaries witnessing the commutativity relation of cohomology.
+	\pause
+	There are two main relations of Steenrod squares.
+	\begin{block}{Cartan relation}
+		\vspace*{-10pt}
+		\begin{equation*}
+			Sq^k \big( [\alpha] [\beta] \big) =
+			\sum_{i+j=k} \, Sq^i\big([\alpha]\big) Sq^j\big([\beta]\big),
+		\end{equation*}
+	\end{block}
+
+	\pause
+
+	\begin{block}{Adem relation}
+		\vspace*{-15pt}
+		\begin{equation*}
+			Sq^i Sq^j =
+			\sum_{k=0}^{\lfloor i/2 \rfloor} \binom{j-k-1}{i-2k} Sq^{i+j-k} Sq^k.
+		\end{equation*}
+	\end{block}
+
+	\pause
+
+	\begin{block}{Construction (Brumfiel-Med.-Morgan)}
+		Explicit cochains witnessing these relations at the cochain level.
+	\end{block}
+
+	\pause
+
+	Motivation came from physics (classification of topological phases).
+\end{frame}

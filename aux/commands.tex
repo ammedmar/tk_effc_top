@@ -1,0 +1,21 @@
+\newsavebox\precoproduct
+\begin{lrbox}{\precoproduct}
+	\begin{tikzpicture}[scale=.3]
+	\draw (0,0)--(0,.8);
+	\draw (0,0)--(.5,-.5);
+	\draw (0,0)--(-.5,-.5);
+	\end{tikzpicture}
+\end{lrbox}
+\newcommand{\coproduct}{% <- this 'right of' is inherited; how to avoid?
+	\usebox\precoproduct}
+
+\newsavebox\preproduct
+\begin{lrbox}{\preproduct}
+	\begin{tikzpicture}[scale=.3]
+	\draw (0,0)--(0,-.8);
+	\draw (0,0)--(.5,.5);
+	\draw (0,0)--(-.5,.5);
+	\end{tikzpicture}
+\end{lrbox}
+\newcommand{\product}{% <- this 'right of' is inherited; how to avoid?
+	\usebox\preproduct}

@@ -1,0 +1,43 @@
+\documentclass[10pt,t,handout]{beamer} % handout
+\usetheme{Heverlee}
+\usepackage{amsmath, amssymb}
+\usepackage{tikz,tikz-cd}
+\usepackage{mathtools,mathbbol}
+\input{aux/usualcmds}
+\input{aux/commands}
+
+%%% QUICK OPTIONS:
+% (A) Math font without serifs, enable line below to make math serif:
+    \usefonttheme[onlymath]{serif}
+
+% (B) Re-define primary colour by adjusting the RGB values
+    %\definecolor{pblue}{RGB}{206,125,66}
+
+% (C) Title page graphic (optional) --- this is not for the background image, see \usebackgroundtemplate to change that ---
+    %\titlegraphic{\includegraphics[height=2.7cm]{example_figure.pdf}}
+
+% (D) Add logo to bottom right-corner (optional)
+    \logo{\includegraphics[height=0.7cm]{aux/icosahedron-src.pdf}\hspace{12pt}\vspace{-6pt}}
+
+% (E) Choose one (or none) of these lines to add footline bar on all frames
+    %\setbeamertemplate{footline}[infoline]  % author, title, insitute
+    %\setbeamertemplate{footline}[navigation] % dots swhowing progress
+    %\setbeamertemplate{footline}[navsym] % navigation symbols
+
+% (F) Widescreen 16:9 ratio
+    %\usepackage[orientation=landscape,size=custom,width=16,height=9,scale=0.45,debug]{beamerposter}
+
+%%% TITLE PAGE INFO:
+
+\title{Effective construction in algebraic topology}
+\author[ammedmar]{Anibal M. Medina-Mardones}
+\institute{Max Planck Institute for Mathematics in Bonn}
+\date{\today}
+
+\begin{document}
+	\input{sec/titlepage}
+	\input{sec/introduction}
+	\input{sec/squares}
+	\input{sec/beyond}
+	\input{sec/lastpage}
+\end{document}

@@ -1,0 +1,32 @@
+\documentclass{standalone}
+\RequirePackage{tikz}
+\RequirePackage{tikz-3dplot}
+
+
+\definecolor{mpgbluelight}{rgb}{0.000,0.694,0.918}
+\definecolor{mpgbluedark}{rgb}{0.161,0.282,0.365}
+
+\newcommand{\icosahedron}[3][black]{\resizebox{#2}{#3}{
+    \begin{tikzpicture}
+      \tdplotsetmaincoords{0}{0}
+      \tdplotsetrotatedcoords{13.6}{12.9}{-5.8}
+      \begin{scope}[tdplot_rotated_coords,
+        line width=1.5pt,line cap=round,line join=round,
+        draw=#1]
+        \pgfmathsetmacro{\phi}{(1 + sqrt(5))/2}
+        \foreach \a/\b in {-1/-\phi,-1/\phi,1/-\phi,1/\phi} {
+          \draw (0,\a,\b) -- (1,\a*\phi,0) -- (-1,\a*\phi,0) -- cycle;
+          \draw (\a,\b,0) -- (\a*\phi,0,1) -- (\a*\phi,0,-1) -- cycle;
+          \draw (\b,0,\a) -- (0,1,\a*\phi) -- (0,-1,\a*\phi) -- cycle;
+        }
+      \end{scope}
+    \end{tikzpicture}
+  }
+}
+
+\begin{document}
+
+%\icosahedron{!}{5cm}
+\icosahedron[mpgbluelight]{!}{5cm}
+
+\end{document}
