@@ -27,7 +27,7 @@
 	\begin{itemize}
 		\item (co)homology operations,
 		\item recognition of infinite loop spaces,
-		\item algebraic representation of the $p$-adic homotopy category.
+		\item algebraic models of the homotopy category.
 	\end{itemize}
 
 	\medskip\pause
@@ -56,75 +56,20 @@
 	Also, versions for: \par
 		\qquad \textcolor{pblue}{cubical} (Kaufmann--Med.) and \par
 		\qquad \textcolor{pblue}{multisimplicial} (Med.--Pizzi--Salvatore) chains.
-
-%	\pause Furthermore, the assignments
-%	\[
-%	\coproduct \mapsto \Delta
-%	\qquad
-%	\product \mapsto \ast
-%	\vspace*{-10pt}
-%	\]
-%	where
-%	\[
-%	\Delta \colon \gchains(\gsimplex^n) \to \gchains(\gsimplex^n)^{\otimes 2}, \qquad
-%	\ast \colon \gchains(\gsimplex^n)^{\otimes 2} \to \gchains(\gsimplex^n)
-%	\]
-%	are the AW coproduct and the algebraic join, \pause
-%	and in the cubical case the CS coproduct and a suitable analogue, induce the following.
-%	\pause
-%	\begin{theorem}[Med.]
-%		The complexes $\gchains(\gsimplex^n)$ and $\gchains(\gcube^n)$ are natural $\UMed$-coalgebras.
-%	\end{theorem}
-%	\pause
-%	We remark that explicitly describable elements in $\UMed(2)$ recover the Steenrod cup-$i$ coproducts in the simplicial and cubical case.
 \end{frame}
 
-%\begin{frame}[t]{Beyond the even prime}
-%
-%	\pause
-%
-%	Extending the diagonal to a full \textcolor{pblue}{$E_\infty$-coalgebra} structure on chains.
-%
-%	\smallskip\pause
-%
-%	These provide an algebraic model for the homotopy theory of spaces.\\ e.g. over $\mathbb Q$ (Quillen--Sullivan) over $\overline{\mathbb F}_p$ (Mandell).
-%
-%	\smallskip\pause
-%
-%	\begin{theorem}[Med.]
-%		The collection of maps $\gchains(\gsimplex^n) \to \gchains(\gsimplex^n)^{\otimes r}$ obtained from compositions of
-%		\begin{align*}
-%		\Delta &\colon \gchains(\gsimplex^n) \to \gchains(\gsimplex^n)^{\otimes 2}
-%		\qquad \text{(AW diagonal)} \\
-%		\ast &\colon \gchains(\gsimplex^n)^{\otimes 2} \to \gchains(\gsimplex^n)
-%		\qquad \text{(Join map)}
-%		\end{align*}
-%		defines an $E_\infty$-coalgebra on simplicial chains.
-%	\end{theorem}
-%
-%	\pause
-%
-%	\only<5>{\qquad \qquad \scalebox{0.7}{\input{aux/join}}}
-%
-%	\medskip\pause
-%
-%	\only<6>{Also, versions for: \par
-%		\qquad \textcolor{pblue}{cubical} (Kaufmann--Med.) and \par
-%		\qquad \textcolor{pblue}{multisimplicial} (Med.--Pizzi--Salvatore) chains.}
-%\end{frame}
-
-\begin{frame}[fragile]{Cup-$(p,i)$ structures}
+\begin{frame}[fragile]{May--Steenrod structures}
 
 	\vskip-5pt\pause
 
 	\begin{block}{Construction (Kaufmann-Med.)}
-		Explicit May--Steenrod structures defining \textcolor{pblue}{operations} on $H^\bullet(-; \Fp)$.
+		Explicit cup-$(p,i)$ coproducts defining \textcolor{pblue}{operations} on $H^\bullet(-; \Fp)$.
 	\end{block}
 
 	\pause
 
 	\begin{block}{Implementation (Med.)}
-		In the computer algebra system \verb|ComCH|.
+		In the computer algebra system \textcolor{pblue}{\texttt{ComCH}}.
 	\end{block}
 
 	\pause
