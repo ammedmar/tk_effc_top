@@ -39,8 +39,8 @@
 
 	\smallskip\pause To correct homotopically the breaking of this symmetry, Steenrod introduced explicit maps
 	\[
-	\Delta_i \colon \gchains(\gsimplex^n) \to \gchains(\gsimplex^n)^{\otimes 2},
-	\qquad
+	\Delta_i \colon \gchains(\gsimplex^n) \to \gchains(\gsimplex^n)^{\otimes 2}
+	\quad \text{satisfying} \quad
 	\partial \Delta_{i} = \big(1 \pm T \big) \Delta_{i-1}
 	\]
 
@@ -117,13 +117,29 @@
 	X_0 \to X_1 \to \cdots \to X_n.
 	\]
 	\pause
-	$Sq^k$ induces an endomorphism of persistent cohomology
+	Cohomology induces a \textcolor{pblue}{persistent module}, its \textcolor{pblue}{barcode} is a summary of how Betti numbers are shared.
+	\phantom{$Sq^k$ induces an endomorphism}
 	\[
-	\begin{tikzcd}[column sep = small]
+	\begin{tikzcd}[column sep = 15]
+		H^\bullet(X_n; \Ftwo) \arrow[r] & \cdots \arrow[r] & H^\bullet(X_{n-1}; \Ftwo) \arrow[r] & \,H^\bullet(X_0; \Ftwo) \phantom{.}
+	\end{tikzcd}
+	\]
+\end{frame}
+
+\begin{frame}[fragile]{Steenrod barcodes}
+	Given a filtered simplicial complex $X$
+	\[
+	X_0 \to X_1 \to \cdots \to X_n.
+	\]
+	Cohomology induces a \textcolor{pblue}{persistent module}, its \textcolor{pblue}{barcode} is a summary of how Betti numbers are shared.
+	$Sq^k$ induces an endomorphism
+	\[
+	\begin{tikzcd}[column sep = 15]
 	H^\bullet(X_n; \Ftwo) \arrow[r] & \cdots \arrow[r] & H^\bullet(X_{n-1}; \Ftwo) \arrow[r] & H^\bullet(X_0; \Ftwo) \\
 	H^\bullet(X_n; \Ftwo) \arrow[u, "Sq^k"] \arrow[r] & \cdots \arrow[r] & H^\bullet(X_{n-1}; \Ftwo) \arrow[u, "Sq^k"] \arrow[r] & H^\bullet(X_0; \Ftwo) \arrow[u, "Sq^k"].
 	\end{tikzcd}
 	\]
+	\pause
 	The \textcolor{pblue}{$Sq^k$-barcode} of $X$ is the barcode of $\mathrm{img}\ Sq^k$.
 
 	\bigskip\pause
@@ -134,9 +150,10 @@
 	develop a high-performance implementation: \textcolor{pblue}{\texttt{steenroder}}.
 \end{frame}
 
-\begin{frame}{Comparing persistent $Sq^2$-modules}
+\begin{frame}{Comparing persistent $Sq^2$-modules} \pause
 	Filtrations of the cone on the suspension of $S^2 \vee S^4$ and $\bC \rP^2$.
 
+	\pause
 	\begin{figure}
 		\centering
 		\begin{subfigure}[b]{0.49\textwidth}
