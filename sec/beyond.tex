@@ -1,57 +1,94 @@
 %!TEX root = ../effc_top.tex
 
 \begin{frame}{Operations at odd primes}
-
 	\pause
+	Steenrod squares from derived commutativity of \textbf{binary} product.
 
-	Steenrod squares come from making a \textbf{binary} coproduct $C \to C^{\ot 2}$ cocommutative up to coherent homotopies.
-
-	\medskip\pause
-
+	\bigskip\pause
 	Steenrod also defined operations (for $\beta \in \{0,1\}$)
 	\[
-	\beta^{\varepsilon} P_k \colon H^\bullet(X; \Fp) \to H^\bullet(X; \Fp).
+	\beta^{\varepsilon} P_k \colon H^\bullet(X; \Fp) \to H^\bullet(X; \Fp)
 	\]
+	from derive commutativity of higher arity product.
 
-	\pause
-
-	They come from making a coproduct $C \to C^{\ot p}$ cocommutative up to coherent homotopies.
-
-	\medskip\pause
-
-	A coherent structure controlling these is that of an $E_\infty$-coalgebra.
-
-	\medskip\pause
-
-	$E_\infty$-structures have a long history:
+	\bigskip\pause
+	Organized by $E_\infty$-structures\pause, which have a long history:
 	\begin{itemize}
-		\item (co)homology operations,
-		\item recognition of infinite loop spaces,
+		\item (co)homology operations, \pause
+		\item recognition of infinite loop spaces, \pause
 		\item algebraic models of the homotopy category.
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{An $E_\infty$-coalgebra on chains} \pause
-	\begin{theorem}[Med.]
-		The collection of maps $\gchains(\gsimplex^n) \to \gchains(\gsimplex^n)^{\otimes r}$ obtained from compositions of
-		\begin{align*}
-			\Delta &\colon \gchains(\gsimplex^n) \to \gchains(\gsimplex^n)^{\otimes 2}
-			\qquad \text{(AW diagonal)} \\
-			\ast &\colon \gchains(\gsimplex^n)^{\otimes 2} \to \gchains(\gsimplex^n)
-			\qquad \text{(Join map)}
-		\end{align*}
-		defines an $E_\infty$-coalgebra on simplicial chains.
-	\end{theorem}
-
+\begin{frame}{An $E_\infty$-coalgebra on chains}
 	\pause
+	\textcolor{pblue}{Theorem (Med.)} \\
+	The collection of maps $\gchains(\gsimplex^n) \to \gchains(\gsimplex^n)^{\otimes r}$ obtained from compositions of
+	\begin{align*}
+		\Delta &\colon \gchains(\gsimplex^n) \to \gchains(\gsimplex^n)^{\otimes 2}
+		\qquad \text{(AW diagonal)} \\
+		\ast &\colon \gchains(\gsimplex^n)^{\otimes 2} \to \gchains(\gsimplex^n)
+		\qquad \text{(Join map)}
+	\end{align*}
+	defines an $E_\infty$-coalgebra on simplicial chains.
 
-	\qquad \qquad \scalebox{0.7}{\input{aux/join}}
+	\bigskip\pause
+	\textcolor{pblue}{Example} \\
+	\qquad\qquad \scalebox{0.7}{\input{aux/join}}
 
-	\medskip\pause
-
+	\bigskip\pause
 	Also, versions for: \par
 		\qquad \textcolor{pblue}{cubical} (Kaufmann--Med.) and \par
 		\qquad \textcolor{pblue}{multisimplicial} (Med.--Pizzi--Salvatore) chains.
+\end{frame}
+
+%\begin{frame}{Two $E_\infty$-bialgebra models for loop spaces}
+%	\pause
+%	Based space $(X,x)$ $\rightarrow$ ``topological monoid'' $\Omega_x X$
+%
+%	\medskip\pause
+%	Cubical singular chains define $\rS^{\square}(\Omega_x X)$ a monoid in $\mathsf{Ch}$.
+%
+%	\medskip\pause
+%	Adams cobar construction applied to based singular chains $\mathbb{\Omega} \rS^{\triangle}(X, x)$:
+%
+%\end{frame}
+
+\begin{frame}[fragile]{Two $E_\infty$-bialgebra models for loop spaces}
+	\pause
+	\textcolor{pblue}{Adams}:
+	\vspace*{-11pt}
+	\begin{center}
+		Based space $(X,x)$ \\ \pause
+		$\Downarrow$ \\
+		``Topological monoid'' $\Omega_x X$ \\ \pause
+		$\Downarrow$ \\
+		Two algebras
+		and a q-iso of algebras: \\
+		\medskip
+		$\mathbb{\Omega} \rS^{\triangle}(X, x)$
+		$\xra{\ \theta_X\ }$
+		$\rS^{\square}(\Omega_x X)$
+	\end{center}
+
+	\bigskip\pause
+	\textcolor{pblue}{Baues}:
+	\vspace*{-11pt}
+	\begin{center}
+		$\theta_X$ is a map of monoids in $\mathsf{coAlg}$
+	\end{center}
+
+	\bigskip\pause
+	\textcolor{pblue}{Med.--Rivera}:
+	\vspace*{-11pt}
+	\begin{center}
+		$\theta_X$ is a map of monoids in $\mathsf{coAlg}_{E_\infty}$
+	\end{center}
+
+%	\medskip\pause
+%	\begin{theorem}[Med.--Rivera]
+%		$\theta_X$ is a q-iso of monoid in $\mathsf{coAlg}_{E_\infty}$
+%	\end{theorem}
 \end{frame}
 
 \begin{frame}[fragile]{May--Steenrod structures}
