@@ -24,7 +24,7 @@
 \end{frame}
 
 \begin{frame}{Steenrod squares}
-	\pause These chain approximations, unlike the diagonal of spaces, are \textcolor{pblue}{not} invariant under transposition: $x \otimes y \stackrel{T}{\mapsto} y \otimes x$.
+	\pause These chain approximations, unlike the diagonal of spaces, are \colorit{not} invariant under transposition: $x \otimes y \stackrel{T}{\mapsto} y \otimes x$.
 	\begin{center}
 		\begin{tikzpicture}
 		\draw[color=pblue, thick] (0,0)--(1,1);
@@ -56,7 +56,7 @@
 
 	\vskip-8pt\pause
 
-	\textcolor{pblue}{Distinguishes}
+	\colorit{Distinguishes}
 	\[
 	H^\bullet(\Sigma(\bC \rP^2)) \not\cong H^\bullet(\Sigma(S^2 \vee S^4))
 	\]
@@ -64,7 +64,7 @@
 
 \begin{frame}[fragile]{A (new) description of Steenrod's construction}
 	\pause\vskip-5pt
-	\textcolor{pblue}{Notation:}
+	\colorit{Notation:}
 	\vspace*{-5pt}
 	\[
 	d_u[v_0, \dots, v_m] = [v_0, \dots, \widehat v_u, \dots, v_m]
@@ -87,7 +87,7 @@
 	\]
 
 	\bigskip\pause
-	\textcolor{pblue}{Definition (Med.)} \\
+	\colorit{Definition (Med.)} \\
 	For a basis element $x \in \gchains_m(\gsimplex^n)$
 	\vspace*{-5pt}
 	\[
@@ -96,7 +96,7 @@
 	\vspace*{-10pt}
 
 	\pause
-	\textcolor{pblue}{Example:}
+	\colorit{Example:}
 	\vspace*{-5pt}
 	\begin{align*}
 	\Delta_0 [0,1,2] &=
@@ -110,7 +110,7 @@
 	Comparing with SAGE: (algorithm based on EZ-AW contraction)
 
 	\smallskip\pause
-	\textcolor{pblue}{$Sq^1$} on \textcolor{pblue}{$\Sigma^i\R P^2$} ($i^\th$ suspension of the real projective plane)
+	\colorit{$Sq^1$} on \colorit{$\Sigma^i\R P^2$} ($i^\th$ suspension of the real projective plane)
 	\medskip
 	\includegraphics[width=\textwidth]{aux/comp_sus_rp2.pdf}
 \end{frame}
@@ -123,7 +123,7 @@
 	\]
 
 	\pause
-	Cohomology induces a \textcolor{pblue}{persistent module}, its \textcolor{pblue}{barcode} is a summary of how Betti numbers are shared.
+	Cohomology induces a \colorit{persistent module}, its \colorit{barcode} is a summary of how Betti numbers are shared.
 	\phantom{$Sq^k$ induces an endomorphism}
 	\[
 	\begin{tikzcd}[column sep = 15]
@@ -137,7 +137,7 @@
 	\[
 	X_0 \to X_1 \to \cdots \to X_n.
 	\]
-	Cohomology induces a \textcolor{pblue}{persistent module}, its \textcolor{pblue}{barcode} is a summary of how Betti numbers are shared.
+	Cohomology induces a \colorit{persistent module}, its \colorit{barcode} is a summary of how Betti numbers are shared.
 	$Sq^k$ induces an endomorphism
 	\[
 	\begin{tikzcd}[column sep = 15]
@@ -147,12 +147,12 @@
 	\]
 
 	\pause
-	The \textcolor{pblue}{$Sq^k$-barcode} of $X$ is the barcode of $\mathrm{img}\ Sq^k$.
+	The \colorit{$Sq^k$-barcode} of $X$ is the barcode of $\mathrm{img}\ Sq^k$.
 
 	\bigskip\pause
-	With \textit{Umberto Lupo} and \textit{Guillaume Tauzin} from \textcolor{pblue}{\texttt{giotto-tda}}'s team
+	With \textit{Umberto Lupo} and \textit{Guillaume Tauzin} from \colorit{\texttt{giotto-tda}}'s team
 	\medskip
-	develop a high-performance implementation: \textcolor{pblue}{\texttt{steenroder}}.
+	develop a high-performance implementation: \colorit{\texttt{steenroder}}.
 \end{frame}
 
 %\begin{frame}{Comparing persistent $Sq^2$-modules} \pause
@@ -183,12 +183,12 @@
 	Computing $Sq^1$ barcode of a ``smooth component'' of this point cloud
 	\smallskip
 	\includegraphics[width=\textwidth]{aux/cyclo-octane_subsampled_absolute_barcodes.pdf}
-	Consistent with a \textcolor{pblue}{Klein bottle} component.
+	Consistent with a \colorit{Klein bottle} component.
 \end{frame}
 
 \begin{frame}{More on cup-$i$ constructions}
 	\pause
-	\textcolor{pblue}{Theorem (Med.)} \\
+	\colorit{Theorem (Med.)} \\
 	All cup-$i$ constructions in the literature are equal up isomorphism:
 	\[
 	\triangle \sim \triangle^\prime \iff \forall i \in \N, \ \triangle_i = \triangle_i^\prime \ \vee \, \triangle_i = T \triangle_i^\prime.
@@ -196,16 +196,16 @@
 	(Proven via an axiomatic characterization.)
 
 	\bigskip\pause
-	\textcolor{pblue}{Theorem (Med.)} \\
+	\colorit{Theorem (Med.)} \\
 	Steenrod's cup-$i$ construction defines the nerve of higher categories.
 
 	\bigskip\pause
-	\textcolor{pblue}{Theorem (Laplante-Anfossi--Med.--Vallette)} \\
+	\colorit{Theorem (Laplante-Anfossi--Med.--Vallette)} \\
 	Let $P \subset \R^n$ be an $n$-dim convex polytope.
 	A generic basis of $\R^n$ defines a cellular cup-$i$ construction $S^\infty \times P \to P \times P$.
 
 	\bigskip\pause
-	\textcolor{pblue}{Theorem (Cantero-Mor\'an)} \\
+	\colorit{Theorem (Cantero-Mor\'an)} \\
 	Interpretation of these formulas for Khovanov homology.
 \end{frame}
 
@@ -214,7 +214,7 @@
 	There are two main Steenrod square relations:
 
 	\bigskip\pause
-	\textcolor{pblue}{Cartan}
+	\colorit{Cartan}
 	\vspace*{-5pt}
 	\begin{equation*}
 		Sq^k \big( [\alpha] [\beta] \big) =
@@ -222,7 +222,7 @@
 	\end{equation*}
 
 	\pause
-	\textcolor{pblue}{Adem}
+	\colorit{Adem}
 	\vspace*{-5pt}
 	\begin{equation*}
 		Sq^i Sq^j =
@@ -230,14 +230,14 @@
 	\end{equation*}
 
 	\medskip\pause
-	\textcolor{pblue}{Construction (Brumfiel--Med.--Morgan)} \\
+	\colorit{Construction (Brumfiel--Med.--Morgan)} \\
 	Explicit cochains witnessing these relations at the cochain level.
 
 	\medskip\pause
-	\textcolor{pblue}{Application (Gaiotto, Kapustin, Thorngren and others)} \\
+	\colorit{Application (Gaiotto, Kapustin, Thorngren and others)} \\
 	Used these in the classification of topological phases.
 
 	\medskip\pause
-	\textcolor{pblue}{Vague idea} \\
+	\colorit{Vague idea} \\
 	Cochains as fields on triangulated spacetime with actions defined using cup-$i$ products and these higher structures.
 \end{frame}
