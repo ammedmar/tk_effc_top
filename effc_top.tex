@@ -1,10 +1,8 @@
-\documentclass[10pt,t]{beamer} % handout
+\documentclass[10pt,t,aspectratio=54]{beamer} % handout aspectratio=149,1610,32,54
 \usetheme{Heverlee}
-\usepackage{amsmath, amssymb}
-\usepackage{tikz,tikz-cd}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz-cd,tikz}
 \usepackage{mathtools,mathbbol}
-\usepackage{caption, subcaption}
-
 \input{aux/usualcmds}
 \input{aux/commands}
 
@@ -13,7 +11,9 @@
     \usefonttheme[onlymath]{serif}
 
 % (B) Re-define primary colour by adjusting the RGB values
-    %\definecolor{pblue}{RGB}{206,125,66}
+%    \definecolor{pblue}{RGB}{0,87,183}
+    % Ukraine blue = 0,87,183
+    % default = 206,125,66
 
 % (C) Title page graphic (optional) --- this is not for the background image, see \usebackgroundtemplate to change that ---
     %\titlegraphic{\includegraphics[height=2.7cm]{example_figure.pdf}}
@@ -31,9 +31,8 @@
 
 %%% TITLE PAGE INFO:
 
-\title{Effective construction in algebraic topology}
-\subtitle{Barcelona Conference on
-	Higher Structures}
+\title{Effective construction in algebraic topology and topological data analysis}
+\subtitle{In the occasion of Gunnar's 70 birthday}
 \author[ammedmar]{Anibal M. Medina-Mardones}
 \institute{Max Planck Institute for Mathematics in Bonn}
 \date{\today}
@@ -42,7 +41,11 @@
 	\input{sec/titlepage}
 	\input{sec/ukraine}
 	\input{sec/introduction}
+	\input{sec/shortcomings}
 	\input{sec/squares}
 	\input{sec/beyond}
+	\input{sec/proof}
+	\input{sec/adams}
+	\input{sec/future}
 	\input{sec/lastpage}
 \end{document}

@@ -1,30 +1,12 @@
 %!TEX root = ../effc_top.tex
 
-\begin{frame}[fragile]{Cup product}
-	\pause Alexander and Whitney defined the cup product by dualizing a chain approximation to the diagonal:
+\begin{frame}{Steenrod construction}
+	\pause
+	Unlike the diagonal of spaces, chain approxs to it are \textbf{not} invariant under
 	\[
-	\gchains(\gsimplex^n) \to \gchains(\gsimplex^n) \otimes \gchains(\gsimplex^n).
+	x \otimes y \stackrel{T}{\mapsto} y \otimes x.
 	\]
-	\pause Similarly, Cartan and Serre constructed: $\gchains(\gcube^n) \to \gchains(\gcube^n) \otimes \gchains(\gcube^n)$.
-
-	\bigskip\pause
-	As mentioned before, as graded rings,
-	\[
-	H^\bullet(\bC \rP^2) \not\cong H^\bullet(S^2 \vee S^4).
-	\]
-
-	\vskip -8pt \pause But,
-	\[
-	H^\bullet(\Sigma(\bC \rP^2)) \cong H^\bullet(\Sigma(S^2 \vee S^4)),
-	\]
-	where $\Sigma$ denotes suspension, for example $\Sigma(S^1)$ is
-	\begin{center}
-		\includegraphics[scale=.2]{aux/suspension.pdf}
-	\end{center}
-\end{frame}
-
-\begin{frame}{Steenrod squares}
-	\pause These chain approximations, unlike the diagonal of spaces, are \colorit{not} invariant under transposition: $x \otimes y \stackrel{T}{\mapsto} y \otimes x$.
+	For example in $\gchains(\gcube) \to \gchains(\gcube) \ot \gchains(\gcube)$ we have
 	\begin{center}
 		\begin{tikzpicture}
 		\draw[color=pblue, thick] (0,0)--(1,1);
@@ -37,35 +19,28 @@
 		\end{tikzpicture}
 	\end{center}
 
-	\smallskip\pause To correct homotopically the breaking of this symmetry, Steenrod introduced explicit maps
+	\smallskip\pause
+	To correct homotopically the breaking of this symmetry, Steenrod introduced \textbf{explicit} maps
 	\[
 	\Delta_i \colon \gchains(\gsimplex^n) \to \gchains(\gsimplex^n)^{\otimes 2}
 	\quad \text{satisfying} \quad
-	\partial \Delta_{i} = \big(1 \pm T \big) \Delta_{i-1}
+	\partial \Delta_{i} = \big(1 \pm T \big) \Delta_{i-1},
 	\]
+	the cup-$i$ coproducts.
 
-	\pause
-
-	These induce further structure:
+	\smallskip\pause
+	These define the Steenrod squares as
 	\[
 	\begin{split}
 		Sq^k \colon H^\bullet(X; \Ftwo) &\to H^\bullet(X; \Ftwo) \\
 		[\alpha] &\mapsto \big[ (\alpha \otimes \alpha) \Delta_i(-) \big]
 	\end{split}
 	\]
-
-	\vskip-8pt\pause
-
-	\colorit{Distinguishes}
-	\[
-	H^\bullet(\Sigma(\bC \rP^2)) \not\cong H^\bullet(\Sigma(S^2 \vee S^4))
-	\]
 \end{frame}
 
-\begin{frame}[fragile]{A (new) description of Steenrod's construction}
-	\pause\vskip-5pt
+\begin{frame}[fragile]{A new description of Steenrod's construction}
+	\pause
 	\colorit{Notation:}
-	\vspace*{-5pt}
 	\[
 	d_u[v_0, \dots, v_m] = [v_0, \dots, \widehat v_u, \dots, v_m]
 	\]
@@ -88,7 +63,7 @@
 
 	\bigskip\pause
 	\colorit{Definition (Med.)} \\
-	For a basis element $x \in \gchains_m(\gsimplex^n)$
+	For a basis element $x \in \gchains_m(\gsimplex^n, \Ftwo)$
 	\vspace*{-5pt}
 	\[
 	\Delta_i(x) \ = \!\!\! \sum_{U \in \rP_{m-i}^n} \!\! d_{U^0}(x) \otimes d_{U^1}(x)
@@ -111,6 +86,7 @@
 
 	\smallskip\pause
 	\colorit{$Sq^1$} on \colorit{$\Sigma^i\R P^2$} ($i^\th$ suspension of the real projective plane)
+
 	\medskip
 	\includegraphics[width=\textwidth]{aux/comp_sus_rp2.pdf}
 \end{frame}
@@ -150,7 +126,7 @@
 	The \colorit{$Sq^k$-barcode} of $X$ is the barcode of $\mathrm{img}\ Sq^k$.
 
 	\bigskip\pause
-	With \textit{Umberto Lupo} and \textit{Guillaume Tauzin} from \colorit{\texttt{giotto-tda}}'s team
+	With \textit{U. Lupo} and \textit{G. Tauzin} from \colorit{\texttt{giotto-tda}}'s team
 	\medskip
 	develop a high-performance implementation: \colorit{\texttt{steenroder}}.
 \end{frame}
@@ -177,6 +153,7 @@
 %\end{frame}
 
 \begin{frame}{Space of conformations of $\mathrm{C_8H_{16}}$}
+	\pause
 	Points in $\R^{24}$ (positions of $8$ carbons in $\R^3$)
 
 	\pause\smallskip
@@ -202,7 +179,7 @@
 	\bigskip\pause
 	\colorit{Theorem (Laplante-Anfossi--Med.--Vallette)} \\
 	Let $P \subset \R^n$ be an $n$-dim convex polytope.
-	A generic basis of $\R^n$ defines a cellular cup-$i$ construction $S^\infty \times P \to P \times P$.
+	A generic orthogonal ordered basis of $\R^n$ defines a cellular cup-$i$ construction $S^\infty \times P \to P \times P$.
 
 	\bigskip\pause
 	\colorit{Theorem (Cantero-Mor\'an)} \\
