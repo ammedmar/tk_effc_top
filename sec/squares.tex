@@ -99,11 +99,14 @@
 	\]
 
 	\pause
-	Cohomology induces a \colorit{persistent module}, its \colorit{barcode} is a summary of how Betti numbers are shared.
-	\phantom{$Sq^k$ induces an endomorphism}
+	Cohomology induces a \colorit{persistent module}, its \colorit{barcode} is a summary of how Betti numbers are consecutively shared.\\
+
+	\smallskip
+	\phantom{A cohomology operation induces an endomorphism}
 	\[
 	\begin{tikzcd}[column sep = 15]
-		H^\bullet(X_n; \Ftwo) \arrow[r] & \cdots \arrow[r] & H^\bullet(X_{n-1}; \Ftwo) \arrow[r] & \,H^\bullet(X_0; \Ftwo) \phantom{.}
+		H^\bullet(X_n; \Ftwo) \arrow[r] & \cdots \arrow[r] & H^\bullet(X_{n-1}; \Ftwo) \arrow[r] & H^\bullet(X_0; \Ftwo) \\
+		\phantom{H^\bullet(X_n; \Ftwo)} \arrow[u, "\phantom{Sq^k}", phantom] & \phantom{\cdots} & \phantom{H^\bullet(X_{n-1}; \Ftwo)} & \phantom{H^\bullet(X_0; \Ftwo)} \arrow[u, "\phantom{Sq^k}", phantom] \phantom{.}
 	\end{tikzcd}
 	\]
 \end{frame}
@@ -113,8 +116,10 @@
 	\[
 	X_0 \to X_1 \to \cdots \to X_n.
 	\]
-	Cohomology induces a \colorit{persistent module}, its \colorit{barcode} is a summary of how Betti numbers are shared.
-	$Sq^k$ induces an endomorphism
+	Cohomology induces a \colorit{persistent module}, its \colorit{barcode} is a summary of how Betti numbers are consecutively shared.
+
+	\smallskip
+	A cohomology operation induces an \colorit{endomorphism}
 	\[
 	\begin{tikzcd}[column sep = 15]
 	H^\bullet(X_n; \Ftwo) \arrow[r] & \cdots \arrow[r] & H^\bullet(X_{n-1}; \Ftwo) \arrow[r] & H^\bullet(X_0; \Ftwo) \\
@@ -126,31 +131,30 @@
 	The \colorit{$Sq^k$-barcode} of $X$ is the barcode of $\mathrm{img}\ Sq^k$.
 
 	\bigskip\pause
-	With \textit{U. Lupo} and \textit{G. Tauzin} from \colorit{\texttt{giotto-tda}}'s team
-	\medskip
-	develop a high-performance implementation: \colorit{\texttt{steenroder}}.
+	With the support of K. Hess', with \textit{U. Lupo} and \textit{G. Tauzin} from \colorit{\texttt{giotto-tda}}'s team \medskip
+	we developed \colorit{\texttt{steenroder}}.
 \end{frame}
 
-%\begin{frame}{Comparing persistent $Sq^2$-modules} \pause
-%	Filtrations of the cone on the suspension of $S^2 \vee S^4$ and $\bC \rP^2$.
-%
-%	\pause
-%	\begin{figure}
-%		\centering
-%		\begin{subfigure}[b]{0.49\textwidth}
-%			\centering
-%			\includegraphics[width=\textwidth]{aux/s2_s4.pdf}
-%			\caption{$\mathrm C\,\Sigma(S^2 \vee S^4)$}
-%			\label{f:s2_s4}
-%		\end{subfigure}
-%		\begin{subfigure}[b]{0.49\textwidth}
-%			\centering
-%			\includegraphics[width=\textwidth]{aux/cp2.pdf}
-%			\caption{$\mathrm C\,\Sigma\,\bC\rP^2$}
-%			\label{f:cp2}
-%		\end{subfigure}
-%	\end{figure}
-%\end{frame}
+\begin{frame}{Comparing persistent $Sq^2$-modules} \pause
+	Filtrations of the cone on the suspension of $S^2 \vee S^4$ and $\bC \rP^2$.
+
+	\pause
+	\begin{figure}
+		\centering
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{aux/s2_s4.pdf}
+			\caption{$\mathrm C\,\Sigma(S^2 \vee S^4)$}
+			\label{f:s2_s4}
+		\end{subfigure}
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{aux/cp2.pdf}
+			\caption{$\mathrm C\,\Sigma\,\bC\rP^2$}
+			\label{f:cp2}
+		\end{subfigure}
+	\end{figure}
+\end{frame}
 
 \begin{frame}{Space of conformations of $\mathrm{C_8H_{16}}$}
 	\pause
@@ -167,23 +171,29 @@
 	\pause
 	\colorit{Theorem (Med.)} \\
 	All cup-$i$ constructions in the literature are equal up isomorphism:
+	\vskip -7.5pt
 	\[
 	\triangle \sim \triangle^\prime \iff \forall i \in \N, \ \triangle_i = \triangle_i^\prime \ \vee \, \triangle_i = T \triangle_i^\prime.
 	\]
+	\vskip -3pt
 	(Proven via an axiomatic characterization.)
 
-	\bigskip\pause
+	\medskip\pause
+	\colorit{Theorem (Cantero-Mor\'an)} \\
+	Interpretation of the new formulas to define operations in Khovanov homology.
+
+	\medskip\pause
 	\colorit{Theorem (Med.)} \\
 	Steenrod's cup-$i$ construction defines the nerve of higher categories.
 
-	\bigskip\pause
+	\medskip\pause
 	\colorit{Theorem (Laplante-Anfossi--Med.--Vallette)} \\
 	Let $P \subset \R^n$ be an $n$-dim convex polytope.
 	A generic orthogonal ordered basis of $\R^n$ defines a cellular cup-$i$ construction $S^\infty \times P \to P \times P$.
 
-	\bigskip\pause
-	\colorit{Theorem (Cantero-Mor\'an)} \\
-	Interpretation of these formulas for Khovanov homology.
+	\medskip\pause
+	\colorit{Theorem (Med.)} \\
+	Sheaves on a simplicial complex $X$ fully faithfully modeled by comodules over Steenrod cup-$i$ coalgebra $\gchains(X)$ using the Ranicki--Weiss assembly.
 \end{frame}
 
 \begin{frame}{Relations}
@@ -212,9 +222,9 @@
 
 	\medskip\pause
 	\colorit{Application (Gaiotto, Kapustin, Thorngren and others)} \\
-	Used these in the classification of topological phases.
+	Used in the classification of topological phases.
 
 	\medskip\pause
 	\colorit{Vague idea} \\
-	Cochains as fields on triangulated spacetime with actions defined using cup-$i$ products and these higher structures.
+	Cochains as fields on triangulated spacetime with actions defined using cup-$i$ products and related higher structures.
 \end{frame}

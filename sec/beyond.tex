@@ -2,17 +2,18 @@
 
 \begin{frame}[fragile]{Operations at odd primes}
 	\pause
-	Squares from derived commutativity of \textbf{binary} product.
+	Steenrod squares come from the symmetry of the \textbf{binary} diagonal.
 
 	\medskip\pause
 	Steenrod, and more generally May, also defined operations
 	\[
 	P_k \colon H^\bullet(X; \Fp) \to H^\bullet(X; \Fp)
 	\]
-	from higher arity products.
+	from the symmetry of $X \to X \times \dots \times X$.
 
 	\medskip\pause
-	\colorit{Note}: indirect definition, no explicit generalizations of cup-$i$ structure.
+	\colorit{Note}: indirect group homology definition.
+	No generalizations of cup-$i$.
 
 	\bigskip\pause
 	\colorit{Construction (Kaufmann-Med.)} \\
@@ -34,26 +35,32 @@
 	Operads control algebraic structures.
 
 	\bigskip\pause
-	The operad $\mathcal{C}om$ controls commutative and associative (co)algebras.
+	The operad $\mathcal{C}om$ controls cocommutative and coassociative coalgebras.
 
 	\bigskip\pause
-	An $E_\infty$-operad is a $\Sym$-cofibrant resolution of $\mathcal{C}om$.
+	An $E_\infty$-operad is an $\Sym$-cofibrant resolution of $\mathcal{C}om$.
+
+%	\bigskip\pause
+%	$E_\infty$-structures have a long history:
+%	\smallskip\pause
+%	\begin{itemize}
+%		\item (co)homology operations,
+%		\item recognition of infinite loop spaces,
+%		\item algebraic models of the homotopy category.
+%	\end{itemize}
 
 	\bigskip\pause
-	$E_\infty$-structures have a long history:
-	\smallskip\pause
-	\begin{itemize}
-		\item (co)homology operations,
-		\item recognition of infinite loop spaces,
-		\item algebraic models of the homotopy category.
-	\end{itemize}
+	\colorit{Fact}:
+	The chains of a space can be made into an $E_\infty$-coalgebra by fully deriving the diagonal map.
 
 	\bigskip\pause
-	The complex chains of a space is an $E_\infty$-coalgebra. \\
-	(Obtained indirectly from fully deriving the diagonal.)
+	\colorit{Principle} (Quillen, Sullivan, Mandell, ...): All homotopy information of spaces is in this algebraic model.
 
 	\bigskip\pause
-	\colorit{Question}: Can this structure be \textbf{explicitly} described?
+	\colorit{Question}: Can this $E_\infty$-structure be made \textbf{explicit}?
+
+	\bigskip\pause
+	Earlier answers by McClure--Smith and Berger--Fresse.
 \end{frame}
 
 \begin{frame}{Explicit $E_\infty$-structure on (co)chains}
@@ -154,5 +161,9 @@
 
 	\medskip\pause
 	\colorit{Theorem (Med.)} \\
-	$\forget(\cM) \defeq \{\cM(1,r)\}_{r \geq 1}$ is a (cofibrant and Hopf) $E_\infty$-operad.
+	The operad associated to $\Med$, defined by
+	\[
+	\forget(\cM) = \{\cM(1,r)\}_{r \geq 1},
+	\]
+	is a (cofibrant and Hopf) $E_\infty$-operad.
 \end{frame}
